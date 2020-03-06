@@ -52,6 +52,24 @@
     }
 
     
+    $.ajax({
+        url: "http://us-central1-productspricing.cloudfunctions.net/covid19pt",
+        type: "GET",
+    })
+    .done(function(data) {
+        //alert("success");
+        var pt = JSON.parse(data).filter(function (entry) {
+            return entry.country === 'Portugal';
+        });
+        var cases = pt[0]["cases"];
+        var deaths = pt[0]["deaths"];
+        $('#deaths').html(deaths);
+        $('#infected').html(cases);
+
+    })
+    .fail(function() {
+        console.log("error");
+    });
     
    /*==================================================================
     [ Simple slide100 ]*/
