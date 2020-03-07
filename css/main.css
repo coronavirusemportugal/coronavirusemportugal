@@ -526,3 +526,9 @@ Primary use:
 .l2-txt1-red {
   color: red;
 }
+
+.infected-today {
+    margin-bottom: 10px;
+    color: burlywood;
+}
+
