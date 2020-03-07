@@ -532,3 +532,7 @@ Primary use:
     color: burlywood;
 }
 
+ins {
+  min-width: 300px;
+  min-height: 50px;
+}
