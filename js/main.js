@@ -53,18 +53,25 @@
 
     
     $.ajax({
-        url: "http://us-central1-productspricing.cloudfunctions.net/covid19pt",
+        url: "https://us-central1-productspricing.cloudfunctions.net/covidptfull",
         type: "GET",
     })
     .done(function(data) {
         //alert("success");
-        var pt = JSON.parse(data).filter(function (entry) {
-            return entry.country === 'Portugal';
-        });
-        var cases = pt[0]["cases"];
-        var deaths = pt[0]["deaths"];
+        var pt = JSON.parse(data);
+        var cases      = pt["cases"];
+        var deaths     = pt["deaths"];
+        var todayCases = pt["todayCases"];
+         
         $('#deaths').html(deaths);
         $('#infected').html(cases);
+        if (todayCases > 0) {
+            $('#infectedTodayNumber').html(todayCases);
+            $('#infectedToday').show();
+        }
+        else {
+            $('#infectedToday').show();
+        }
 
     })
     .fail(function() {
