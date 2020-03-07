@@ -70,7 +70,7 @@
             $('#infectedToday').show();
         }
         else {
-            $('#infectedToday').show();
+            $('#infectedToday').hide();
         }
 
     })
