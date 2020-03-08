@@ -93,8 +93,7 @@
         $('#infected').html(cases);
         if (todayCases > 0) {
             $('#infectedTodayNumber').html(todayCases);
-            //$('#infectedToday').show();
-            $('#infectedToday').hide();
+            $('#infectedToday').show();
         }
         else {
             $('#infectedToday').hide();
