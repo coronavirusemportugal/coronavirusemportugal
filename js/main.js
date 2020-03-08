@@ -51,7 +51,33 @@
         $(thisAlert).removeClass('alert-validate');
     }
 
+    var chart_options = {
+      chart: {
+        height: 380,
+        width: '100%',
+        type: "area",
+        animations: {
+          initialAnimation: {
+            enabled: false
+          }
+        }
+      },
+      tooltip: {
+      },
+      dataLabels: {
+        enabled: false
+      },
+      series: [
+      ],
+      xaxis: {
+        type: "datetime"
+      }
+    };
     
+    var chart = new ApexCharts(document.querySelector("#chart"), chart_options);
+    
+    chart.render();
+
     $.ajax({
         url: "https://us-central1-productspricing.cloudfunctions.net/covidptfull",
         type: "GET",
@@ -72,6 +98,17 @@
         else {
             $('#infectedToday').hide();
         }
+
+        var infected_series = [];
+        $.each(pt['history'] , function(index, val) {
+          infected_series.push({x:val['date'],y:val['infected']});
+        });
+
+        // Fill in chart
+        chart.updateSeries([{
+            name: "Infetados",
+            data: infected_series
+        }]);
 
     })
     .fail(function() {
