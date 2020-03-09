@@ -51,32 +51,49 @@
         $(thisAlert).removeClass('alert-validate');
     }
 
+    function getData() {
+        $.ajax({
+            url: "https://us-central1-productspricing.cloudfunctions.net/covidptfull",
+            type: "GET",
+        })
+        .done(function(data) {
+            //alert("success");
+            var pt = JSON.parse(data);
+            var cases      = pt["cases"];
+            var deaths     = pt["deaths"];
+            var todayCases = pt["todayCases"];
+             
+            $('#deaths').html(deaths);
+            $('#infected').html(cases);
+            if (todayCases > 0) {
+                $('#infectedTodayNumber').html(todayCases);
+                $('#infectedToday').show();
+            }
+            else {
+                $('#infectedToday').hide();
+            }
     
-    $.ajax({
-        url: "https://us-central1-productspricing.cloudfunctions.net/covidptfull",
-        type: "GET",
-    })
-    .done(function(data) {
-        //alert("success");
-        var pt = JSON.parse(data);
-        var cases      = pt["cases"];
-        var deaths     = pt["deaths"];
-        var todayCases = pt["todayCases"];
-         
-        $('#deaths').html(deaths);
-        $('#infected').html(cases);
-        if (todayCases > 0) {
-            $('#infectedTodayNumber').html(todayCases);
-            $('#infectedToday').show();
-        }
-        else {
-            $('#infectedToday').hide();
-        }
+        })
+        .fail(function() {
+            console.log("error");
+        });
+    }
+    
+    function initTimer() {
+        var refreshDataDelay = 10000;
 
-    })
-    .fail(function() {
-        console.log("error");
-    });
+        setInterval(function(){
+                getData();
+        },refreshDataDelay);
+    }
+
+    // timer to refresh data automatically
+
+    getData();
+    initTimer();
+
+    
+    
     
    /*==================================================================
     [ Simple slide100 ]*/
