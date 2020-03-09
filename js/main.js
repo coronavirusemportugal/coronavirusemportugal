@@ -79,7 +79,7 @@
     chart.render();
 
     $.ajax({
-        url: "https://us-central1-productspricing.cloudfunctions.net/covidptfull",
+        url: "https://europe-west2-coronavirusportugal.cloudfunctions.net/data",
         type: "GET",
     })
     .done(function(data) {
