@@ -78,12 +78,15 @@
     
     chart.render();
 
-    $.ajax({
-        url: "https://europe-west2-coronavirusportugal.cloudfunctions.net/data",
-        type: "GET",
-    })
-    .done(function(data) {
-        //alert("success");
+
+    
+    function getData() {
+        $.ajax({
+            url: "https://europe-west2-coronavirusportugal.cloudfunctions.net/data",
+            type: "GET",
+        })
+        .done(function(data) {
+           //alert("success");
         var pt = JSON.parse(data);
         var cases      = pt["cases"];
         var deaths     = pt["deaths"];
@@ -109,32 +112,6 @@
             name: "Infetados",
             data: infected_series
         }]);
-
-    })
-    .fail(function() {
-        console.log("error");
-    });
-    function getData() {
-        $.ajax({
-            url: "https://us-central1-productspricing.cloudfunctions.net/covidptfull",
-            type: "GET",
-        })
-        .done(function(data) {
-            //alert("success");
-            var pt = JSON.parse(data);
-            var cases      = pt["cases"];
-            var deaths     = pt["deaths"];
-            var todayCases = pt["todayCases"];
-             
-            $('#deaths').html(deaths);
-            $('#infected').html(cases);
-            if (todayCases > 0) {
-                $('#infectedTodayNumber').html(todayCases);
-                $('#infectedToday').show();
-            }
-            else {
-                $('#infectedToday').hide();
-            }
     
         })
         .fail(function() {
