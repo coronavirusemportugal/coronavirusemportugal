@@ -119,6 +119,7 @@
         });
     }
     
+        // timer to refresh data automatically
     function initTimer() {
         var refreshDataDelay = 10000;
 
@@ -127,9 +128,38 @@
         },refreshDataDelay);
     }
 
-    // timer to refresh data automatically
 
+    function chunk (arr, len) {
+
+        var chunks = [],
+            i = 0,
+            n = arr.length;
+      
+        while (i < n) {
+          chunks.push(arr.slice(i, i += len));
+        }
+      
+        return chunks;
+      }
+
+      
+    function getNews() {
+        $.ajax({
+            url: "https://us-central1-coronavirusportugal.cloudfunctions.net/news",
+            type: "GET",
+        })
+        .done(function(data) {
+           //alert("success");
+           var template = Handlebars.templates.news;
+           $('#news').html(template(chunk(data.slice(0, 10),2)));
+    
+        })
+        .fail(function() {
+            console.log("error");
+        });
+    }
     getData();
+    getNews();
     initTimer();
 
     

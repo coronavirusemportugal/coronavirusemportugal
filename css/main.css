@@ -542,6 +542,10 @@ ins {
   margin: 35px auto;
   opacity: 0.9;
 }
+
+.card-max-width {
+  max-width: 450px;
+}
 /* Circle Animation */
 
 /* Prevent scrollbars to appear when waves go out of bound */
