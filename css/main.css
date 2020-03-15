@@ -549,6 +549,12 @@ ins {
 .card-title {
   min-height: 60px;
 }
+
+.timer-options {
+  float: right;
+  margin-top: 15px;
+  color: #666666;
+}
 /* Circle Animation */
 
 /* Prevent scrollbars to appear when waves go out of bound */

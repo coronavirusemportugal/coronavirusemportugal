@@ -142,7 +142,9 @@
         return chunks;
       }
 
-      
+    
+    HandlebarsIntl.registerWith(Handlebars);
+
     function getNews() {
         $.ajax({
             url: "https://us-central1-coronavirusportugal.cloudfunctions.net/news",
@@ -151,7 +153,8 @@
         .done(function(data) {
            //alert("success");
            var template = Handlebars.templates.news;
-           $('#news').html(template(chunk(data.slice(0, 10),2)));
+           var newsarray = data.sort((a, b) => b.published - a.published)
+           $('#news').html(template(chunk(newsarray.slice(0, 10),2)));
     
         })
         .fail(function() {
