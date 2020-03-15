@@ -546,6 +546,9 @@ ins {
 .card-max-width {
   max-width: 450px;
 }
+.card-title {
+  min-height: 60px;
+}
 /* Circle Animation */
 
 /* Prevent scrollbars to appear when waves go out of bound */
