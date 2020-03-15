@@ -35,11 +35,22 @@ $( document ).ready(function() {
     .done(function(data) {
         //alert("success");
         var pt = JSON.parse(data);
-        var cases      = pt["cases"];
-        var deaths     = pt["deaths"];
-        var todayCases = pt["todayCases"];
+        var cases       = pt["cases"];
+        var deaths      = pt["deaths"];
+        var active      = pt["active"];
+        var recovered   = pt["recovered"];
+        var todayCases  = pt["todayCases"];
+        var todayDeaths = pt["todayDeaths"];
          
         $('#deaths').html(deaths);
+        if (todayDeaths > 0) {
+            $('#deathsNumber').html(todayDeaths);
+            $('#deathsToday').show();
+        }
+        else {
+            $('#deathsToday').hide();
+        }
+
         $('#infected').html(cases);
         if (todayCases > 0) {
             $('#infectedTodayNumber').html(todayCases);
@@ -48,6 +59,8 @@ $( document ).ready(function() {
         else {
             $('#infectedToday').hide();
         }
+        $('#recovered').html(recovered);
+        $('#active').html(active);
 
         var infected_series = [];
         var deaths_series    = [];
