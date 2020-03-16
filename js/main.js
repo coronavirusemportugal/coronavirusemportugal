@@ -45,7 +45,7 @@ $( document ).ready(function() {
              
             $('#deaths').html(deaths);
             if (todayDeaths > 0) {
-                $('#deathsNumber').html(todayDeaths);
+                $('#deathsTodayNumber').html(todayDeaths);
                 $('#deathsToday').show();
             }
             else {
