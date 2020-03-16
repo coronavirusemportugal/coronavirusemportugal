@@ -28,7 +28,11 @@ $( document ).ready(function() {
     
     chart.render();
 
-    function getData() {
+    function getData(useVisualLoaders=false) {
+        if ( useVisualLoaders ) {
+           $('.loader-data').show();
+        }
+
         $.ajax({
             url: "https://europe-west2-coronavirusportugal.cloudfunctions.net/data",
             type: "GET",
@@ -82,6 +86,10 @@ $( document ).ready(function() {
               }
     
             ]);
+
+            if ( useVisualLoaders ) {
+              $('.loader-data').hide();
+            }
     
         })
         .fail(function() {
@@ -91,7 +99,11 @@ $( document ).ready(function() {
 
     HandlebarsIntl.registerWith(Handlebars);
 
-    function getNews() {
+    function getNews(useVisualLoaders=false) {
+        if ( useVisualLoaders ) {
+           $('.loader-news').show();
+        }
+
         $.ajax({
             url: "https://us-central1-coronavirusportugal.cloudfunctions.net/news",
             type: "GET",
@@ -104,7 +116,11 @@ $( document ).ready(function() {
             var dateB = new Date(b.published);
             return dateB - dateA;
           });
-           $('#news').html(template(data.slice(0, 10)));
+          $('#news').html(template(data.slice(0, 10)));
+
+          if ( useVisualLoaders ) {
+             $('.loader-news').hide();
+          }
     
         })
         .fail(function() {
@@ -114,4 +130,14 @@ $( document ).ready(function() {
 
     getData();
     getNews();
+
+    setInterval(function(){ 
+      getData(true);
+      getNews(true);
+    }, 60000);
+
+    if (! Cookies.get('first-visit') ) {
+      $('#auto-update-info').show();   
+      Cookies.set('first-visit', (new Date().getTime()));
+    }
 });

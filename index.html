@@ -74,6 +74,13 @@
             <div class="sharethis-inline-share-buttons"></div>
           </div>
 
+          <div class="alert alert-info alert-dismissible fade show" class="display:none" role="alert" id="auto-update-info">
+             O contéudo desta página atualiza automáticamente todos os minutos <i class="fa fa-clock"></i>.
+             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+
           <!-- Content Row -->
           <div class="row">
             <div class="col-6 col-xl-3 col-md-6 mb-4">
@@ -82,6 +89,9 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-md font-weight-bold text-danger text-uppercase mb-1">Óbitos</div>
+                      <div class="spinner-border spinner-border-sm float-right loader-data" style="display:none" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="deaths"></span> <span id="deathsToday" class="text-xs" style="display:none">( <span id="deathsTodayNumber"></span> hoje )</span></div>
                     </div>
                     <div class="col-auto d-none d-md-block">
@@ -98,6 +108,9 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-md font-weight-bold text-warning text-uppercase mb-1">Infetados</div>
+                      <div class="spinner-border spinner-border-sm float-right loader-data" style="display:none" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800"><span id="infected"></span> <span id="infectedToday" class="text-xs" style="display:none">( <span id="infectedTodayNumber"></span> hoje )</span></div>
                     </div>
                     <div class="col-auto d-none d-md-block">
@@ -115,6 +128,9 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-md font-weight-bold text-success text-uppercase mb-1">Recuperados</div>
+                      <div class="spinner-border spinner-border-sm float-right loader-data" style="display:none" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800" id="recovered"></div>
                     </div>
                     <div class="col-auto d-none d-md-block">
@@ -132,6 +148,9 @@
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-md font-weight-bold text-primary text-uppercase mb-1">Casos Ativos</div>
+                      <div class="spinner-border spinner-border-sm float-right loader-data" style="display:none" role="status">
+                        <span class="sr-only">Loading...</span>
+                      </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800" id="active"></div>
                     </div>
                     <div class="col-auto d-none d-md-block">
@@ -154,6 +173,9 @@
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Evolução dos casos</h6>
+                  <div class="spinner-border spinner-border-sm float-right loader-data" style="display:none" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -169,6 +191,9 @@
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Últimas noticias</h6>
                   <!--<a href="#" class="text-right text-success">Ver todas</a>-->
+                  <div class="spinner-border spinner-border-sm float-right loader-news" style="display:none" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body" id="news" style="height: 360px; overflow-y: auto;">
@@ -227,6 +252,8 @@
 
   <!-- Core plugin JavaScript-->
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
