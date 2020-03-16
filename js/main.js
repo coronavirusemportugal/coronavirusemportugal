@@ -136,7 +136,7 @@ $( document ).ready(function() {
       getNews(true);
     }, 60000);
 
-    if (! Cookies.get('first-visit') ) {
+    if (Cookies.get('first-visit') == null) {
       $('#auto-update-info').show();   
       Cookies.set('first-visit', (new Date().getTime()));
     }
