@@ -68,10 +68,10 @@ $( document ).ready(function() {
             $('#active').html(active);
     
             var infected_series = [];
-            var deaths_series    = [];
+            var deaths_series   = [];
             $.each(pt['history'] , function(index, val) {
-              infected_series.push({x:val['date'],y:val['infected']});
-              deaths_series.push({x:val['date'],y:val['deaths']});
+              infected_series.push({ x:val['date'], y: (val['infected'] || 0) });
+              deaths_series.push({   x:val['date'], y: (val['deaths']   || 0) });
             });
     
             // Fill in chart
@@ -128,12 +128,17 @@ $( document ).ready(function() {
         });
     }
 
+    function reloadAds() {
+        $( '#a-ads' ).attr( 'src', function ( i, val ) { return val; });
+    }
+
     getData();
     getNews();
 
     setInterval(function(){ 
       getData(true);
       getNews(true);
+      reloadAds();
     }, 60000);
 
     if (Cookies.get('first-visit') == null) {
