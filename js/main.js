@@ -21,7 +21,7 @@ $( document ).ready(function() {
       xaxis: {
         type: "datetime"
       },
-      colors: ['#2E93fA', '#e74a3b', '#546E7A', '#E91E63', '#FF9800']
+      colors: ['#f6c23e', '#e74a3b', '#546E7A', '#E91E63', '#FF9800']
     };
     
     var chart = new ApexCharts(document.querySelector("#chart"), chart_options);
