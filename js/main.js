@@ -71,7 +71,7 @@ $( document ).ready(function() {
             var deaths_series    = [];
             $.each(pt['history'] , function(index, val) {
               infected_series.push({x:val['date'],y:val['infected']});
-              deaths_series.push({x:val['date'],y:val['dead']});
+              deaths_series.push({x:val['date'],y:val['deaths']});
             });
     
             // Fill in chart
