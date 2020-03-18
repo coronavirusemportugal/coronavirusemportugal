@@ -1,0 +1,119 @@
+data = [
+  {
+    "Name": "Sem taxa entrega - código ALMOCO seguido do dia e mês correspondentes segundo o formato DDMM. Por exemplo, para beneficiar do desconto no dia 16 de março, basta adicionar o código ALMOCO1603",
+    "Provider": "UberEats",
+    "Type": "Alimentar",
+    "Start": "16-03-2020",
+    "End": "31-03-2020",
+    "Location": "Portugal",
+    "URL": "https://www.publico.pt/2020/03/16/fugas/noticia/servicos-entrega-comida-casa-uber-eats-remove-taxa-almoco-1907970"
+  },
+  {
+    "Name": "Escola Virtual (1º ao 12º ano)",
+    "Provider": "Escola Virtual",
+    "Type": "Educação",
+    "Start": "09-03-2020",
+    "End": "",
+    "Location": "Portugal",
+    "URL": "https://www.escolavirtual.pt/"
+  },
+  {
+    "Name": "Aula Digital (1º ao 12º ano)",
+    "Provider": "LeYa",
+    "Type": "Educação",
+    "Start": "09-03-2020",
+    "End": "",
+    "Location": "Portugal",
+    "URL": "https://auladigital.leya.com/"
+  },
+  {
+    "Name": "Aulas Programação (1º ao 6º ano)",
+    "Provider": "Ubbu",
+    "Type": "Educação",
+    "Start": "16-03-2020",
+    "End": "30-06-2020",
+    "Location": "Portugal",
+    "URL": "https://www.publico.pt/2020/03/16/tecnologia/noticia/ubbu-oferece-aulas-programacao-distancia-escolas-1907925"
+  },
+  {
+    "Name": "Cinema em casa",
+    "Provider": "Medeia Filmes",
+    "Type": "Filmes",
+    "Start": "17-03-2020",
+    "End": "21-03-2020",
+    "Location": "Portugal",
+    "URL": "http://medeiafilmes.com/noticias/ver/noticia/quarentena-cinefila-com-a-medeia-filmes/"
+  },
+  {
+    "Name": "dados grátis + SportTV",
+    "Provider": "MEO",
+    "Type": "Telecomunicações",
+    "Start": "17-03-2020",
+    "End": "16-04-2020",
+    "Location": "Portugal",
+    "URL": "https://www.meo.pt/covid-19-medidas-operadores-telecomunicacoes"
+  },
+  {
+    "Name": "dados grátis + SportTV",
+    "Provider": "Vodafone",
+    "Type": "Telecomunicações",
+    "Start": "17-03-2020",
+    "End": "16-04-2020",
+    "Location": "Portugal",
+    "URL": "https://www.vodafone.pt/10gigas.html?i_id=herobanner-covid19-3"
+  },
+  {
+    "Name": "dados grátis",
+    "Provider": "NOS",
+    "Type": "Telecomunicações",
+    "Start": "17-03-2020",
+    "End": "16-04-2020",
+    "Location": "Portugal",
+    "URL": "https://www.nos.pt/particulares/Pages/10-gigas.aspx?HP"
+  },
+  {
+    "Name": "Validações Facultativas",
+    "Provider": "Carris",
+    "Type": "Transportes",
+    "Start": "15-03-2020",
+    "End": "",
+    "Location": "Lisboa",
+    "URL": "http://www.carris.pt/pt/noticias/2020/carris-reforca-medidas-de-seguranca-para-clientes-e-tripulantes/"
+  },
+  {
+    "Name": "Suspensão de Parquímetros",
+    "Provider": "C.M.Lisboa",
+    "Type": "Transportes",
+    "Start": "15-03-2020",
+    "End": "09-04-2020",
+    "Location": "Lisboa",
+    "URL": "https://expresso.pt/coronavirus/2020-03-16-EMEL.-Estacionamento-gratuito-em-Lisboa-durante-a-pandemia-de-Covid-19"
+  },
+  {
+    "Name": "Suspensão de Parquímetros",
+    "Provider": "C.M.Porto",
+    "Type": "Transportes",
+    "Start": "15-03-2020",
+    "End": "09-04-2020",
+    "Location": "Porto",
+    "URL": "https://www.tsf.pt/portugal/sociedade/covid-19-porto-suspende-parquimetros-lisboa-sem-decisao-11927379.html"
+  },
+  {
+    "Name": "Validações Facultativas",
+    "Provider": "Metro do Porto",
+    "Type": "Transportes",
+    "Start": "18-03-2020",
+    "End": "",
+    "Location": "Porto",
+    "URL": "https://www.metrodoporto.pt/"
+  },
+  {
+    "Name": "Isenção de pagamento de água e luz",
+    "Provider": "Governo Regional da Madeira",
+    "Type": "Utilidades",
+    "Start": "16-03-2020",
+    "End": "31-03-2020",
+    "Location": "Madeira",
+    "URL": "https://www.rtp.pt/madeira/sociedade/covid-19-populacao-da-madeira-isenta-de-pagar-contas-de-agua-e-luz-de-16-a-31-de-marco_36115"
+  }
+ ]
