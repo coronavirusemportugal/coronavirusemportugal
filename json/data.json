@@ -45,7 +45,7 @@ data = [
     "URL": "http://medeiafilmes.com/noticias/ver/noticia/quarentena-cinefila-com-a-medeia-filmes/"
   },
   {
-    "Name": "dados grátis + SportTV",
+    "Name": "Dados grátis + SportTV",
     "Provider": "MEO",
     "Type": "Telecomunicações",
     "Start": "17-03-2020",
@@ -54,7 +54,7 @@ data = [
     "URL": "https://www.meo.pt/covid-19-medidas-operadores-telecomunicacoes"
   },
   {
-    "Name": "dados grátis + SportTV",
+    "Name": "Dados grátis + SportTV",
     "Provider": "Vodafone",
     "Type": "Telecomunicações",
     "Start": "17-03-2020",
@@ -63,7 +63,7 @@ data = [
     "URL": "https://www.vodafone.pt/10gigas.html?i_id=herobanner-covid19-3"
   },
   {
-    "Name": "dados grátis",
+    "Name": "Dados grátis",
     "Provider": "NOS",
     "Type": "Telecomunicações",
     "Start": "17-03-2020",
