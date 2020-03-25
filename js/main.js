@@ -32,7 +32,7 @@ $( document ).ready(function() {
       chart: {
         height: 305,
         width: '100%',
-        type: "column",
+        type: "bar",
         animations: {
           initialAnimation: {
             enabled: false
