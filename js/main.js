@@ -119,7 +119,7 @@ $( document ).ready(function() {
             ]);
 
             // Fill in daily chart
-            chart.updateSeries([
+            chart_daily.updateSeries([
               {
                 name: "Infetados",
                 data: infected_daily_series
