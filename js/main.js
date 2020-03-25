@@ -28,6 +28,34 @@ $( document ).ready(function() {
     
     chart.render();
 
+    var chart_daily_options = {
+      chart: {
+        height: 305,
+        width: '100%',
+        type: "column",
+        animations: {
+          initialAnimation: {
+            enabled: false
+          }
+        }
+      },
+      tooltip: {
+      },
+      dataLabels: {
+        enabled: false
+      },
+      series: [
+      ],
+      xaxis: {
+        type: "datetime"
+      },
+      colors: ['#f6c23e', '#e74a3b', '#546E7A', '#E91E63', '#FF9800']
+    };
+    
+    var chart_daily = new ApexCharts(document.querySelector("#chart_daily"), chart_daily_options);
+    
+    chart_daily.render();
+
     function getData(useVisualLoaders=false) {
         if ( useVisualLoaders ) {
            $('.loader-data').show();
@@ -67,11 +95,15 @@ $( document ).ready(function() {
             $('#recovered').html(recovered);
             $('#active').html(active);
     
-            var infected_series = [];
-            var deaths_series   = [];
+            var infected_series       = [];
+            var deaths_series         = [];
+            var infected_daily_series = [];
+            var deaths_daily_series   = [];
             $.each(pt['history'] , function(index, val) {
-              infected_series.push({ x:val['date'], y: (val['infected'] || 0) });
-              deaths_series.push({   x:val['date'], y: (val['deaths']   || 0) });
+              infected_series.push({       x:val['date'], y: (val['infected'] || 0) });
+              deaths_series.push({         x:val['date'], y: (val['deaths']   || 0) });
+              infected_daily_series.push({ x:val['date'], y: (val['todayInfected'] || 0) });
+              deaths_daily_series.push({   x:val['date'], y: (val['todayDeaths']   || 0) });
             });
     
             // Fill in chart
@@ -83,6 +115,18 @@ $( document ).ready(function() {
               {
                 name: "Óbitos",
                 data: deaths_series
+              }
+            ]);
+
+            // Fill in daily chart
+            chart.updateSeries([
+              {
+                name: "Infetados",
+                data: infected_daily_series
+              },
+              {
+                name: "Óbitos",
+                data: deaths_daily_series
               }
     
             ]);

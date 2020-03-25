@@ -206,6 +206,27 @@
             </div>
           </div>
 
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-6 col-lg-6">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Número de casos diários</h6>
+                  <div class="spinner-border spinner-border-sm float-right loader-data" style="display:none" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div id="chart_daily"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
           <!-- Content Row -->
 <!--
           <div class="row">
@@ -268,7 +289,7 @@
   <script src="js/handlebars-intl.min.js"></script>
   <script sec="js/pt.js"></script>
   <script src="js/news.precompiled.js"></script>
-  <script src="js/main.js?v4"></script>
+  <script src="js/main.js?v5"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159911368-1"></script>
   <script>
